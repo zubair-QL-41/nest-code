@@ -1,0 +1,6 @@
+[submodule "firestore"]
+	path = firestore
+	url = git@github.com:zubair-QL-41/firestore.git
+[submodule "firebase-dynamiclink"]
+	path = firebase-dynamiclink
+	url = git@github.com:zubair-QL-41/firebase-dynamiclink.git

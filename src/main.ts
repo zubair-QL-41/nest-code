@@ -12,7 +12,7 @@ import { ResponseInterceptor } from '@interceptors/response.interceptor';
 import { AppModule } from './modules/app/app.module';
 import * as bodyParser from 'body-parser';
 import GlobalValidationPipe from '@pipes/global-validation.pipe';
-
+import dotenv from 'dotenv';
 /**
  *
  */
@@ -24,7 +24,7 @@ async function bootstrap() {
 
   // Enable CORS
   app.enableCors();
-
+  dotenv.config();
   // Getting config service for accessing environment variable
   const configService = app.get(ConfigService);
 

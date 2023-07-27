@@ -2,6 +2,7 @@ import { Controller, Get } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { ResponseInterface } from '@interfaces/Responses/response.interface';
 import { AppService } from './app.service';
+import { generateShareLink } from './../../../firebase-dynamiclink/index';
 
 /**
  *
@@ -20,6 +21,8 @@ export class AppController {
    */
   @Get('home')
   async getHello(): Promise<ResponseInterface> {
+    const df = await generateShareLink('http://quokkalabs.com', 'hii', 'hello');
+    console.log('df', df);
     const response = this.appService.getHello();
     return { status: 1000, data: { response } };
   }
